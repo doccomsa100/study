@@ -15,7 +15,12 @@ if [ ! -d $LOG_PATH ]; then
     sudo mkdir $LOG_PATH
 fi
 
+sudo chmod +w $DEPLOY_LOG
+
+
 CURRENT_PID=$(pgrep -f $JAR_FILE)
+
+
 
 if [ -z "$CURRENT_PID" ]; then
   echo "$NOW_DATETIME :: $JAR_FILE :: There is no process!" >> $DEPLOY_LOG
