@@ -17,6 +17,7 @@ if [ ! -d $LOG_PATH ]; then
     sudo mkdir $LOG_PATH
 fi
 
+
 # build 파일 복사
 echo "$TIME_NOW > $JAR_FILE 파일 복사" >> $DEPLOY_LOG
 
