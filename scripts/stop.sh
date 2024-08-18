@@ -23,6 +23,6 @@ if [ -z "$CURRENT_PID" ]; then
   echo "$NOW_DATETIME :: $JAR_FILE :: There is no process!" >> $DEPLOY_LOG
 else
   echo "$NOW_DATETIME :: $JAR_FILE :: $CURRENT_PID stopped!" >> $DEPLOY_LOG  
-  sudo kill -15 $CURRENT_PID
+  kill -15 $CURRENT_PID
   sleep 5
 fi
