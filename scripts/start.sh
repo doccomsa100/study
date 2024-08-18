@@ -3,7 +3,7 @@
 
 PROJECT="study-1.0.0"
 PROJECT_NAME=study
-PROJECT_FULL_PATH="/home/ec2-user/app/step2"
+PROJECT_FULL_PATH="/home/ec2-user/app2/step2"
 JAR_FILE="$PROJECT_FULL_PATH/$PROJECT.jar"
 LOG_PATH="$PROJECT_FULL_PATH/logs"
 
@@ -14,7 +14,7 @@ DEPLOY_LOG="$LOG_PATH/0_deploy.log"
 NOW_DATETIME=$(date "+%Y-%m-%d-%aT%T")
 
 if [ ! -d $LOG_PATH ]; then
-    sudo mkdir $LOG_PATH
+    mkdir $LOG_PATH
 fi
 
 # build 파일 복사
@@ -22,7 +22,7 @@ echo "$TIME_NOW > $JAR_FILE 파일 복사" >> $DEPLOY_LOG
 
 cd $PROJECT_FULL_PATH
 
-sudo cp $PROJECT_FULL_PATH/study/target/*.jar $JAR_FILE
+cp $PROJECT_FULL_PATH/study/target/*.jar $JAR_FILE
 #sudo cp /home/ec2-user/app/step2/study/target/study-1.0.0.jar.jar study-1.0.0.jar
 
 cd $PROJECT_FULL_PATH
@@ -39,7 +39,7 @@ sleep 30s
 CURRENT_PID=$(pgrep -f $JAR_FILE)
 
 if [ -z $CURRENT_PID ]; then
-  sudo echo "$NOW_DATETIME :: $JAR_FILE :: failed to start!" >> $DEPLOY_LOG
+  echo "$NOW_DATETIME :: $JAR_FILE :: failed to start!" >> $DEPLOY_LOG
 else
-  sudo echo "$NOW_DATETIME :: $JAR_FILE :: $CURRENT_PID started!" >> $DEPLOY_LOG
+  echo "$NOW_DATETIME :: $JAR_FILE :: $CURRENT_PID started!" >> $DEPLOY_LOG
 fi

@@ -3,7 +3,7 @@
 
 PROJECT="study-1.0.0"
 PROJECT_NAME=study
-PROJECT_FULL_PATH="/home/ec2-user/app/step2"
+PROJECT_FULL_PATH="/home/ec2-user/app2/step2"
 JAR_FILE="$PROJECT_FULL_PATH/$PROJECT.jar"
 LOG_PATH="$PROJECT_FULL_PATH/logs"
 
@@ -12,7 +12,7 @@ DEPLOY_LOG="$LOG_PATH/0_deploy.log"
 NOW_DATETIME=$(date "+%Y-%m-%d-%aT%T")
 
 if [ ! -d $LOG_PATH ]; then
-    sudo mkdir $LOG_PATH
+    mkdir $LOG_PATH
 fi
 
 CURRENT_PID=$(pgrep -f $JAR_FILE)
