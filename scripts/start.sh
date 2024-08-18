@@ -39,7 +39,7 @@ sleep 30s
 CURRENT_PID=$(pgrep -f $JAR_FILE)
 
 if [ -z $CURRENT_PID ]; then
-  echo "$NOW_DATETIME :: $JAR_FILE :: failed to start!" >> $DEPLOY_LOG
+  sudo echo "$NOW_DATETIME :: $JAR_FILE :: failed to start!" >> $DEPLOY_LOG
 else
-  echo "$NOW_DATETIME :: $JAR_FILE :: $CURRENT_PID started!" >> $DEPLOY_LOG
+  sudo echo "$NOW_DATETIME :: $JAR_FILE :: $CURRENT_PID started!" >> $DEPLOY_LOG
 fi
