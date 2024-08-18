@@ -18,7 +18,7 @@ if [ ! -d $LOG_PATH ]; then
 fi
 
 # build 파일 복사
-sudo echo "$TIME_NOW > $JAR_FILE 파일 복사" >> $DEPLOY_LOG
+echo "$TIME_NOW > $JAR_FILE 파일 복사" >> $DEPLOY_LOG
 
 cd $PROJECT_FULL_PATH
 
@@ -39,7 +39,7 @@ sleep 30s
 CURRENT_PID=$(pgrep -f $JAR_FILE)
 
 if [ -z $CURRENT_PID ]; then
-  sudo echo "$NOW_DATETIME :: $JAR_FILE :: failed to start!" >> $DEPLOY_LOG
+  echo "$NOW_DATETIME :: $JAR_FILE :: failed to start!" >> $DEPLOY_LOG
 else
-  sudo echo "$NOW_DATETIME :: $JAR_FILE :: $CURRENT_PID started!" >> $DEPLOY_LOG
+  echo "$NOW_DATETIME :: $JAR_FILE :: $CURRENT_PID started!" >> $DEPLOY_LOG
 fi
