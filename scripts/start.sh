@@ -14,7 +14,7 @@ DEPLOY_LOG="$LOG_PATH/0_deploy.log"
 NOW_DATETIME=$(date "+%Y-%m-%d-%aT%T")
 
 if [ ! -d $LOG_PATH ]; then
-    mkdir $LOG_PATH
+    sudo mkdir $LOG_PATH
 fi
 
 # build 파일 복사
@@ -22,8 +22,8 @@ echo "$TIME_NOW > $JAR_FILE 파일 복사" >> $DEPLOY_LOG
 
 cd $PROJECT_FULL_PATH
 
-#sudo cp $PROJECT_FULL_PATH/study/target/*.jar $JAR_FILE
-sudo cp /home/ec2-user/app/step2/study/target/study-1.0.0.jar.jar study-1.0.0.jar
+sudo cp $PROJECT_FULL_PATH/study/target/*.jar $JAR_FILE
+#sudo cp /home/ec2-user/app/step2/study/target/study-1.0.0.jar.jar study-1.0.0.jar
 
 cd $PROJECT_FULL_PATH
 
