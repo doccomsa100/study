@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 # start.sh
 
-
-
 PROJECT="study-1.0.0"
 PROJECT_NAME=study
 PROJECT_FULL_PATH="/home/ec2-user/app/step2"
@@ -25,7 +23,7 @@ echo "$TIME_NOW > $JAR_FILE 파일 복사" >> $DEPLOY_LOG
 cd $PROJECT_FULL_PATH
 
 #sudo cp $PROJECT_FULL_PATH/study/target/*.jar $JAR_FILE
-sudo cp $PROJECT_FULL_PATH/study/target/*.jar .
+sudo cp /home/ec2-user/app/step2/study/target/study-1.0.0.jar.jar study-1.0.0.jar
 
 cd $PROJECT_FULL_PATH
 
