@@ -12,7 +12,7 @@ DEPLOY_LOG="$LOG_PATH/0_deploy.log"
 NOW_DATETIME=$(date "+%Y-%m-%d-%aT%T")
 
 if [ ! -d $LOG_PATH ]; then
-    mkdir $LOG_PATH
+    sudo mkdir $LOG_PATH
 fi
 
 CURRENT_PID=$(pgrep -f $JAR_FILE)
