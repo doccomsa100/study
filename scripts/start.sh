@@ -21,7 +21,7 @@ fi
 
 # build 파일 복사
 echo "$TIME_NOW > $JAR_FILE 파일 복사" >> $DEPLOY_LOG
-cp $PROJECT_FULL_PATH/target/*.jar $JAR_FILE
+sudo cp $PROJECT_FULL_PATH/target/*.jar $JAR_FILE
 
 cd $PROJECT_FULL_PATH
 
